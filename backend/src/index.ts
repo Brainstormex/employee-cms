@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import employeesRouter from './routes/employees'
+import employeesRouter from './routes/employee.route'
 import prisma from './prisma'
 
 dotenv.config()

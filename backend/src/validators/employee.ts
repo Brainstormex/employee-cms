@@ -1,5 +1,5 @@
 import Joi from 'joi'
-import type { EmployeeInput } from '../types'
+import type { EmployeeInput } from '../routes/employee.types'
 
 export const employeeSchema = Joi.object<EmployeeInput>({
   name: Joi.string().trim().min(1).max(100).required().messages({

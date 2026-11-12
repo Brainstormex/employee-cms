@@ -9,11 +9,13 @@ interface Props {
   loading?: boolean
 }
 
-function formatDate(value: string) {
-  return new Date(value).toLocaleDateString(undefined, {
+function formatDateTime(value: string) {
+  return new Date(value).toLocaleString(undefined, {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
   })
 }
 
@@ -67,8 +69,8 @@ export default function EmployeeTable({
                   {employee.role}
                 </span>
               </td>
-              <td className="px-4 py-3.5 text-ink/55">{formatDate(employee.created_at)}</td>
-              <td className="px-4 py-3.5 text-ink/55">{formatDate(employee.updated_at)}</td>
+              <td className="px-4 py-3.5 text-ink/55">{formatDateTime(employee.created_at)}</td>
+              <td className="px-4 py-3.5 text-ink/55">{formatDateTime(employee.updated_at)}</td>
               <td className="px-4 py-3.5">
                 <div className="flex justify-end gap-2">
                   <button
